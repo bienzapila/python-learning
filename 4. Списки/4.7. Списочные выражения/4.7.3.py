@@ -1,1 +1,0 @@
-print(*[s for s in input().split()], sep="\n")
