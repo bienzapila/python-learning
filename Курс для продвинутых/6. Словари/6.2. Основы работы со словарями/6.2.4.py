@@ -7,5 +7,4 @@ ans = {
 }
 
 s = input()
-print(f"{s}:", end=" ")
-print(*ans[s], sep=", ")
+print(f"{s}:", ", ".join(str(v) for v in ans[s]))
