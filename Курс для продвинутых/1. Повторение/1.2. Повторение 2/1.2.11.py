@@ -1,8 +1,6 @@
-s = input().split()
-s.append("запретил")
-s.append("букву")
+line = [input(), 'запретил', 'букву']
 
-b = [
+letters = [
     "а",
     "б",
     "в",
@@ -37,22 +35,27 @@ b = [
     "я",
 ]
 
-print(*s, "а")
-for l in range(len(b)):
-    sa = "".join(s)
-    if l != len(b) - 1:
-        if b[l] not in sa:
-            continue
-    so = []
-    for k in range(len(s)):
-        word = ""
-        for i in range(len(s[k])):
-            if s[k][i] != b[l]:
-                word += s[k][i]
-        s[k] = word
-        if word != "":
-            so.append(word)
-    if so == []:
-        break
-    if l != len(b) - 1:
-        print(*so, b[l + 1])
+for letter in letters:
+    line_join = '+'.join(line)
+    if letter in line_join:
+        print(*line, letter)
+    else:
+        continue
+    
+    new_line_join = ''
+    for symbol in line_join:
+        if symbol != letter:
+            new_line_join += symbol
+
+    line = new_line_join.strip('+').split('+')
+    
+    new_line = []
+    for i in range(len(line)):
+        if line[i] != '':
+            new_line.append(line[i])
+    line = new_line
+
+
+
+
+            

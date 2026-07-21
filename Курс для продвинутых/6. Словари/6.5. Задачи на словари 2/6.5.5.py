@@ -1,15 +1,21 @@
 def dict_diff(data1, data2):
     ans = {}
-    for key1 in data1.keys():
-        for key2 in data2.keys():
-            if key1 == key2:
-                if data1[key1] == data2[key2]:
-                    ans[key1] = "unchanged"
-                else:
-                    ans[key1] = "changed"
+
+    for key in data1.keys():
+        if key in data2.keys():
+            if data2[key] == data1[key]:
+                ans[key] = 'unchanged'
+            else:
+                ans[key] = 'changed'
         else:
-            ans[key1] = "deleted"
-    for key2 in data2.keys():
-        if key2 not in data1:
-            ans[key2] = "added"
+            ans[key] = 'deleted'
+    
+    for key in data2.keys():
+        if key in ans:
+            continue
+        else:
+            ans[key] = 'added'
+
     return ans
+
+
