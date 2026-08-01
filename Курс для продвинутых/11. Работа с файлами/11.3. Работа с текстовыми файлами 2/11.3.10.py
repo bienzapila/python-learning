@@ -1,12 +1,10 @@
-ans_dict = {}
+ans_list = []
 for _ in range(int(input())):
     input_file = input()
     with open(input_file) as file:
-        length = 0
-        for line in file:
-            line.replace('\n', 'aa')
-            print(line)
-            length += len(line)
-        ans_dict[input_file] = length
+        lines = file.read().replace('\n', '  ')
+    ans_list.append((len(lines), input_file))
 
-print(ans_dict)
+values_sorted = sorted(ans_list, key=lambda x: (-x[0], x[1]))
+for value in values_sorted:
+    print(f'{value[1]} {value[0]}B')
