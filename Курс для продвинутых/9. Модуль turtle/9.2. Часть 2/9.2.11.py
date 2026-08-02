@@ -1,0 +1,40 @@
+import turtle as t
+window = t.Screen()
+t.speed(10)
+
+t.circle(100)
+t.circle(50)
+
+t.penup()
+t.goto(0, 100)
+t.left(60)
+t.forward(100)
+t.pendown()
+t.right(120)
+t.circle(20)
+
+t.penup()
+t.left(120)
+t.backward(100)
+t.left(60)
+t.forward(100)
+t.pendown()
+t.right(120)
+t.circle(20)
+
+t.penup()
+t.goto(60, 120)
+t.dot()
+t.penup()
+t.goto(-60, 120)
+t.dot()
+
+t.penup()
+t.goto(0, 20)
+t.pendown()
+t.setheading(90)
+t.forward(50)
+t.setheading(0)
+t.circle(10)
+
+window.mainloop()
