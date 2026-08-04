@@ -1,3 +1,2 @@
-with open('birds.txt', 'w') as file:
-    print('seagull\n', file=file)
-    print('humingbird', 'flamingo', file=file)
+a = 'a be be'
+print(a.replace('be', '*'))
